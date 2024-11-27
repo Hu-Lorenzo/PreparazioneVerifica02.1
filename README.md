@@ -1,0 +1,1 @@
+# PreparazioneVerifica02.1
