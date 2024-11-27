@@ -1,1 +1,5 @@
-<p>food-v works!</p>
+<div *ngIf="productDetails">
+    <pre>{{ productDetails | json }}</pre>
+    <button class="btn btn-secondary" routerLink="/search">Back</button>
+  </div>
+  

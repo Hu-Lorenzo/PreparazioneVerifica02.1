@@ -1,1 +1,16 @@
-<p>ricerca-f works!</p>
+<div class="mb-3">
+    <input type="text" [(ngModel)]="searchTerm" class="form-control" placeholder="Search for food" />
+    <button class="btn btn-primary mt-2" (click)="search()">Search</button>
+  </div>
+  <div *ngIf="searchResults.length > 0">
+    <div *ngFor="let product of searchResults" class="mb-3">
+      <div class="card">
+        <img *ngIf="product.image_url" [src]="product.image_url" class="card-img-top" alt="{{ product.product_name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.product_name }}</h5>
+          <a routerLink="['/item', product.code]" class="btn btn-info">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
