@@ -6,12 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CiboService {
-  private apiUrl = 'https://world.openfoodfacts.org/cgi/search.pl';
+  private apiBase = 'https://world.openfoodfacts.org';
 
   constructor(private http: HttpClient) {}
 
-  searchFood(searchTerm: string, pageSize: number = 10): Observable<any> {
-    const url = `${this.apiUrl}?search_terms=${searchTerm}&page_size=${pageSize}&json=true`;
-    return this.http.get<any>(url);
+  searchFood(term: string): Observable<any> {
+    const url = `${this.apiBase}/cgi/search.pl?search_terms=${term}&page_size=10&json=true`;
+    return this.http.get(url);
+  }
+
+  getProductDetails(id: string): Observable<any> {
+    const url = `${this.apiBase}/api/v0/product/${id}.json`;
+    return this.http.get(url);
   }
 }

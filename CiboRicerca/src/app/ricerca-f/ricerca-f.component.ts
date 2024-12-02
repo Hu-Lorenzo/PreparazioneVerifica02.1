@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { CiboService } from '../cibo.service';
 
@@ -11,10 +10,10 @@ export class RicercaFComponent {
   searchResults: any[] = [];
   searchTerm: string = '';
 
-  constructor(private CiboService: CiboService) {}
+  constructor(private ciboService: CiboService) {}
 
   search(): void {
-    this.CiboService.searchFood(this.searchTerm).subscribe(data => {
+    this.ciboService.searchFood(this.searchTerm).subscribe(data => {
       this.searchResults = data.products || [];
     });
   }

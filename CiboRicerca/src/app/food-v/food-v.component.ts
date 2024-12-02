@@ -1,5 +1,3 @@
-
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CiboService } from '../cibo.service';
@@ -20,8 +18,8 @@ export class FoodVComponent implements OnInit {
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id')!;
-    this.ciboService.searchFood(this.productId).subscribe(data => {
-      this.productDetails = data;
+    this.ciboService.getProductDetails(this.productId).subscribe(data => {
+      this.productDetails = data.product || {};
     });
   }
 }
