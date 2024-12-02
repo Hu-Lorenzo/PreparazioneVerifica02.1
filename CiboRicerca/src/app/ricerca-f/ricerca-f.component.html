@@ -1,6 +1,6 @@
 <div class="mb-3">
   <input type="text" [(ngModel)]="searchTerm" class="form-control" placeholder="Search for food" />
-  <button class="btn btn-primary mt-2" (click)="search()">Search</button>
+  <button class="btn btn-primary mt-2" (click)="search()">Ricerca</button>
 </div>
 <div *ngIf="searchResults.length > 0">
   <div *ngFor="let product of searchResults" class="card mb-3">

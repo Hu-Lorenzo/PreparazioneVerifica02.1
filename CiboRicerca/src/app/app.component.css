@@ -1,0 +1,32 @@
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  h1.text-center {
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    color: #343a40;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .my-4 {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+
+  router-outlet {
+    display: block;
+    margin-top: 20px;
+  }
+  
